@@ -2,6 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AsyncLock.NET</PackageId>
+    <Authors>Jeremy Cantu</Authors>
+    <Product>AsyncLock.NET</Product>
+    <PackageProjectUrl>https://github.com/Jac21/AsyncLock.NET</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/Jac21/AsyncLock.NET</RepositoryUrl>
+    <PackageIcon>logo_transparent.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\media\logo_transparent.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
