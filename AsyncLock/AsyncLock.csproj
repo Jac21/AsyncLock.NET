@@ -11,6 +11,10 @@
     <RepositoryUrl>https://github.com/Jac21/AsyncLock.NET</RepositoryUrl>
     <PackageIcon>logo_transparent.png</PackageIcon>
     <PackageIconUrl />
+    <Version>1.0.1</Version>
+    <Description>🔒 .NET Nuget for a basic asynchronous locking recipe
+
+</Description>
   </PropertyGroup>
 
   <ItemGroup>
