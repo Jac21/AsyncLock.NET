@@ -8,9 +8,15 @@ namespace AsyncLock
     public static class AsyncLock
     {
         /// <summary>
-        /// Set limit to a maximum of a single lock
+        /// The maximum number of requests for the semaphore that can be granted concurrently.
+        /// Defaults to 1.
         /// </summary>
-        private static readonly SemaphoreSlim Lock = new SemaphoreSlim(1, 1);
+        public static int MaxCount { get; set; } = 1;
+
+        /// <summary>
+        /// Set lock limit to a configured maximum
+        /// </summary>
+        private static readonly SemaphoreSlim Lock = new SemaphoreSlim(1, MaxCount);
 
         public static async Task ExecuteWithLock<T>(Func<T> f)
         {
