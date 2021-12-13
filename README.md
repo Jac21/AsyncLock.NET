@@ -29,3 +29,17 @@ await AsyncLock.ExecuteWithLock(async () =>
 
 await connection.StartAsync();
 ```
+
+```csharp
+// example of setting the maximum number of requests for the semaphore 
+// that can be granted concurrently which defaults to one
+AsyncLock.MaxCount = 5;
+
+// act
+await AsyncLock.ExecuteWithLock(async () =>
+{
+    await Task.Delay(1000);
+
+    return "Test";
+});
+```
