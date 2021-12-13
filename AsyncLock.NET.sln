@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLock", "AsyncLock\AsyncLock.csproj", "{82AA3FA5-91E4-40C4-8313-CA3A741B2424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLock", "AsyncLock\AsyncLock.csproj", "{82AA3FA5-91E4-40C4-8313-CA3A741B2424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLock.Unit.Test", "AsyncLock.Unit.Test\AsyncLock.Unit.Test.csproj", "{21E1497A-CC44-49A6-8AED-5FB31717E069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLock.Unit.Test", "AsyncLock.Unit.Test\AsyncLock.Unit.Test.csproj", "{21E1497A-CC44-49A6-8AED-5FB31717E069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
