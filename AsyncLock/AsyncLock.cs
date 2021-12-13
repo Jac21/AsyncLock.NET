@@ -12,14 +12,14 @@ namespace AsyncLock
         /// </summary>
         private static readonly SemaphoreSlim Lock = new SemaphoreSlim(1, 1);
 
-        public static async Task ExecuteWithLock<T>(Task<Func<T>> f)
+        public static async Task ExecuteWithLock<T>(Func<T> f)
         {
             // grab the single lock
             await Lock.WaitAsync();
 
             try
             {
-                await f;
+                f();
             }
             catch (Exception ex)
             {
