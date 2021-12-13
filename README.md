@@ -19,14 +19,13 @@ PM> Install-Package AsyncLock.NET -Version 1.0.0
 ### Example usage
 
 ```csharp
-// synchronous operation
-await AsyncLock.ExecuteWithLock(() => "Test");
+// example of an asynchronous operation setting a SignalR connection
+HubConnection connection;
 
-// asynchronous operation
 await AsyncLock.ExecuteWithLock(async () =>
 {
-    await Task.Delay(1000);
-
-    return "Test";
+    connection = await GetConnection("https://that.place.on.the.internet/hub");
 });
+
+await connection.StartAsync();
 ```
