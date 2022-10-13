@@ -10,15 +10,15 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Jac21/AsyncLock.NET</RepositoryUrl>
     <PackageIcon>logo_transparent.png</PackageIcon>
-    <PackageIconUrl />
+    <PackageIconUrl>https://raw.githubusercontent.com/Jac21/AsyncLock.NET/master/media/favicon.png</PackageIconUrl>
     <Version>1.0.1</Version>
     <Description>🔒 .NET Nuget for a basic asynchronous locking recipe
 
 </Description>
     <LangVersion>default</LangVersion>
     <PackageVersion>1.0.2</PackageVersion>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/Jac21/AsyncLock.NET/master/LICENSE.md</PackageLicenseUrl>
     <PackageTags>parallel-computing multithreading async</PackageTags>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
