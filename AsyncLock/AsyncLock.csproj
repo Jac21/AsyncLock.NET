@@ -16,7 +16,7 @@
 
 </Description>
     <LangVersion>default</LangVersion>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>6.0.0</PackageVersion>
     <PackageTags>parallel-computing multithreading async</PackageTags>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
