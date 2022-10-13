@@ -12,7 +12,7 @@
 Find it on [nuget](https://www.nuget.org/packages/AsyncLock.NET/)!
 
 ```
-PM> Install-Package AsyncLock.NET -Version 1.0.1
+PM> Install-Package AsyncLock.NET -Version 6.0.0
 ```
 
 ## API 
