@@ -11,7 +11,7 @@ namespace AsyncLock.Integration.Test
         // Internal State
         private HubConnection? _connection;
 
-        public async Task<HubConnection> GetConnection(string url)
+        public async Task<HubConnection?> GetConnection(string url)
         {
             if (_connection == null)
             {
@@ -43,7 +43,7 @@ namespace AsyncLock.Integration.Test
         public async Task AsyncLock_GetConnection_Success_Test()
         {
             // arrange
-            HubConnection connection = null;
+            HubConnection? connection = null;
 
             // act
             await AsyncLock.ExecuteWithLock(async () =>

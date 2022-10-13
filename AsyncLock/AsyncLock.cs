@@ -16,7 +16,7 @@ namespace AsyncLock
         /// <summary>
         /// Set lock limit to a configured maximum
         /// </summary>
-        private static readonly SemaphoreSlim Lock = new SemaphoreSlim(1, MaxCount);
+        private static readonly SemaphoreSlim Lock = new(1, MaxCount);
 
         public static async Task ExecuteWithLock<T>(Func<T> f)
         {
