@@ -17,6 +17,8 @@
 </Description>
     <LangVersion>default</LangVersion>
     <PackageVersion>1.0.2</PackageVersion>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Jac21/AsyncLock.NET/master/LICENSE.md</PackageLicenseUrl>
+    <PackageTags>parallel-computing multithreading async</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
