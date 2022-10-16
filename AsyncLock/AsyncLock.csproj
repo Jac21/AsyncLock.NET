@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>AsyncLock.NET</PackageId>
     <Authors>Jeremy Cantu</Authors>
@@ -16,9 +15,14 @@
 
 </Description>
     <LangVersion>default</LangVersion>
-    <PackageVersion>6.0.0</PackageVersion>
+    <PackageVersion>6.0.1</PackageVersion>
     <PackageTags>parallel-computing multithreading async</PackageTags>
     <PackOnBuild>true</PackOnBuild>
+    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
+      
+      <DebugType>embedded</DebugType>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageValidationBaselineVersion>6.0.0</PackageValidationBaselineVersion>
   </PropertyGroup>
 
   <ItemGroup>
