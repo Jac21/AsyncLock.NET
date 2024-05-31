@@ -3,6 +3,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
 using NUnit.Framework;
+using Shouldly;
 
 namespace AsyncLock.Integration.Test
 {
@@ -52,7 +53,7 @@ namespace AsyncLock.Integration.Test
             });
 
             // assert
-            Assert.IsNotNull(connection);
+            connection.ShouldBeNull();
         }
     }
 }
