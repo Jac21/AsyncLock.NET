@@ -1,31 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>AsyncLock.NET</PackageId>
     <Authors>Jeremy Cantu</Authors>
     <Product>AsyncLock.NET</Product>
     <PackageProjectUrl>https://github.com/Jac21/AsyncLock.NET</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Jac21/AsyncLock.NET</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageIcon>logo_transparent.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/Jac21/AsyncLock.NET/master/media/favicon.png</PackageIconUrl>
-    <Version>1.0.1</Version>
-    <Description>🔒 .NET Nuget for a basic asynchronous locking recipe
-
-</Description>
-    <LangVersion>default</LangVersion>
-    <PackageVersion>6.0.1</PackageVersion>
+    <Version>2.0.0</Version>
+    <Description>Lightweight async mutual exclusion and bounded concurrency primitives for modern .NET applications.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>parallel-computing multithreading async</PackageTags>
-    <PackOnBuild>true</PackOnBuild>
-    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
-      
-      <DebugType>embedded</DebugType>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+    <RootNamespace>AsyncLockNet</RootNamespace>
+    <DebugType>embedded</DebugType>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageValidationBaselineVersion>6.0.0</PackageValidationBaselineVersion>
+    <PackageValidationBaselineVersion>1.0.1</PackageValidationBaselineVersion>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\LICENSE.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

@@ -1,61 +1,61 @@
-using System.Threading.Tasks;
+using System.Threading;
+using AsyncLockNet;
 using NUnit.Framework;
 
-namespace AsyncLock.Unit.Test
+namespace AsyncLock.Unit.Test;
+
+public class AsyncLockTests
 {
-    public class AsyncLockTests
+    [Test]
+    public async Task ExecuteAsync_ReturnsSynchronousResult()
     {
-        [SetUp]
-        public void SetUp()
+        using var asyncLock = new global::AsyncLockNet.AsyncLock();
+
+        var result = await asyncLock.ExecuteAsync(() => "Test");
+
+        Assert.That(result, Is.EqualTo("Test"));
+    }
+
+    [Test]
+    public async Task ExecuteAsync_ReturnsAsynchronousResult()
+    {
+        using var asyncLock = new global::AsyncLockNet.AsyncLock();
+
+        var result = await asyncLock.ExecuteAsync(async () =>
         {
-            AsyncLock.MaxCount = 1;
-        }
+            await Task.Delay(25);
+            return "Test";
+        });
 
-        [Test]
-        public async Task AsyncLock_ExecuteWithLock_Success_Test()
-        {
-            // arrange
+        Assert.That(result, Is.EqualTo("Test"));
+    }
 
-            // act
-            await AsyncLock.ExecuteWithLock(() => "Test");
+    [Test]
+    public void Constructor_RejectsInvalidConcurrency()
+    {
+        Assert.That(() => new global::AsyncLockNet.AsyncLock(0), Throws.TypeOf<ArgumentOutOfRangeException>());
+    }
 
-            // assert
-            Assert.Pass();
-        }
+    [Test]
+    public async Task LockAsync_CanBeCancelled()
+    {
+        using var asyncLock = new global::AsyncLockNet.AsyncLock();
+        using var heldLease = await asyncLock.LockAsync();
+        using var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(100));
 
-        [Test]
-        public async Task AsyncLock_ExecuteWithLock_Async_Success_Test()
-        {
-            // arrange
+        var act = async () => await asyncLock.LockAsync(cts.Token);
 
-            // act
-            await AsyncLock.ExecuteWithLock(async () =>
-            {
-                await Task.Delay(1000);
+        Assert.That(act, Throws.InstanceOf<OperationCanceledException>());
+    }
 
-                return "Test";
-            });
+    [Test]
+    public void LockAsync_ThrowsWhenDisposed()
+    {
+        var asyncLock = new global::AsyncLockNet.AsyncLock();
+        asyncLock.Dispose();
 
-            // assert
-            Assert.Pass();
-        }
+        var act = async () => await asyncLock.LockAsync();
 
-        [Test]
-        public async Task AsyncLock_SetMaxCount_ExecuteWithLock_Async_Success_Test()
-        {
-            // arrange
-            AsyncLock.MaxCount = 5;
-
-            // act
-            await AsyncLock.ExecuteWithLock(async () =>
-            {
-                await Task.Delay(1000);
-
-                return "Test";
-            });
-
-            // assert
-            Assert.Pass();
-        }
+        Assert.That(act, Throws.InstanceOf<ObjectDisposedException>());
     }
 }
