@@ -15,7 +15,7 @@
     <PackageTags>parallel-computing multithreading async</PackageTags>
     <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
     <RootNamespace>AsyncLockNet</RootNamespace>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageValidationBaselineVersion>1.0.1</PackageValidationBaselineVersion>
     <IncludeSymbols>true</IncludeSymbols>
