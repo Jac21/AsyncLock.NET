@@ -17,7 +17,6 @@
     <RootNamespace>AsyncLockNet</RootNamespace>
     <DebugType>portable</DebugType>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageValidationBaselineVersion>1.0.1</PackageValidationBaselineVersion>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
