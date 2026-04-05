@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore AsyncLock.NET.sln
+
+      - name: Build
+        run: dotnet build AsyncLock.NET.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test AsyncLock.NET.sln --configuration Release --no-build --verbosity normal
+
+      - name: Pack
+        run: dotnet pack AsyncLock/AsyncLock.csproj --configuration Release --no-build --output artifacts
+
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: artifacts/*
+          if-no-files-found: error
